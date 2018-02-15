@@ -14,6 +14,8 @@ class Order extends Model
         'first_name',
         'last_name',
         'email',
-        'details'
+        'details',
+        'created_at',
+        'updated_at'
     ];
 }
