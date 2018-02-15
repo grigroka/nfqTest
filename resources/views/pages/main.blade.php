@@ -1,12 +1,7 @@
-<head>
+@extends('layouts.app')
+@section('title', '| Welcome')
 
-
-</head>
-
-<body>
-
-
-<main role="main">
+@section('content')
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -38,12 +33,6 @@
         </div>
 
         <hr>
-
     </div> <!-- /container -->
 
-</main>
-
-
-
-</body>
-</html>
+@endsection

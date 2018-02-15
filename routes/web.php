@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('pages.main');})->name('main');
 Route::resource('orders', 'OrderController');
