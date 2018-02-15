@@ -12,9 +12,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Order $order)
     {
-        $orders = Order::orderBy('id', 'desc')->sortable()->paginate(10);
+        $orders = $order->sortable(['created_at' => 'desc'])->paginate(10);
         return view('pages.orders')->withOrders($orders);
     }
 
