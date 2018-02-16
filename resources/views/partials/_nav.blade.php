@@ -18,7 +18,7 @@
                     <a class="nav" href="{{ route('main') }}">Main</a>
                 </li>
                 <li class="{{ Request::is('orders') ? "active" : "" }}">
-                    <a class="nav-link" href="{{ route('orders.index') }}">Successful Orders</a>
+                    <a class="nav-link" href="{{ route('orders.index') }}">All Orders</a>
                 </li>
                 <li class="{{ Request::is('orders/create') ? "active" : "" }}">
                     <a class="nav-link" href="{{ route('orders.create') }}">Order Now!</a>

@@ -15,6 +15,7 @@
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
+            <h2>Latest orders:</h2>
             @foreach($orders as $order)
                 <div class="col-md-4">
                     <h2>{{ $order->first_name }} {{ $order->last_name }}</h2>
