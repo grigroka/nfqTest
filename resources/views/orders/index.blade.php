@@ -13,7 +13,7 @@
         </form>
     </div>
     <div class="container-fluid">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
             <tr>
                 <th width="80px">@sortablelink('id', 'ID')</th>
                 <th>@sortablelink('first_name', 'First Name')</th>
