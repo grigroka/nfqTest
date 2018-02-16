@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ route('main') }}">
-                {{ config('app.name', 'nfqTestApp') }}
+                {{ config('app.name', 'companyX') }}
             </a>
         </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -21,7 +21,7 @@
                     <a class="nav-link" href="{{ route('orders.index') }}">All Orders</a>
                 </li>
                 <li class="{{ Request::is('orders/create') ? "active" : "" }}">
-                    <a class="nav-link" href="{{ route('orders.create') }}">Order Now!</a>
+                    <a class="nav-link" href="{{ route('orders.create') }}">Order Now</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
