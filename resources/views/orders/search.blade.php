@@ -27,6 +27,7 @@
                     <th>@sortablelink('email', 'E-mail')</th>
                     <th>@sortablelink('details', 'Details')</th>
                     <th>@sortablelink('created_at', 'Date')</th>
+                    <th>More</th>
                 </tr>
 
                 @if($results->count())
