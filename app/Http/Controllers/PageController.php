@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use Mail;
 use Session;
+use Purifier;
 
 class PageController extends Controller
 {
@@ -35,7 +36,7 @@ class PageController extends Controller
         $data = [
             'email' => $request->email,
             'subject' => $request->subject,
-            'bodyMessage' => $request->message
+            'bodyMessage' => Purifier::clean($request->message)
         ];
 
         Mail::send('emails.contact', $data, function($message) use($data) {
