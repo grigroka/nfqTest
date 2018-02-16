@@ -13,3 +13,4 @@
 
 Route::get('/', 'PageController@main')->name('main');
 Route::resource('orders', 'OrderController')->except(['edit', 'update', 'destroy']);
+Route::get('queries', 'OrderController@search')->name('queries.search');

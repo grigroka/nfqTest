@@ -73,6 +73,17 @@ class OrderController extends Controller
         $order = Order::find($id);
         return view('orders.show')->withOrder($order);
     }
+//    Search function.
+
+    public function search(Request $request, Order $order)
+    {
+        $this->validate($request, [
+            'search' => 'required|max:191'
+        ]);
+        $query = $request->search;
+        $results = $order->sortable()->where('first_name', 'LIKE', '%' . $query . '%')->orWhere('last_name', 'LIKE', '%' . $query .'%')->orWhere('email', 'LIKE', '%' . $query .'%')->orWhere('details', 'LIKE', '%' . $query . '%')->paginate(10);
+        return view('orders.search')->withResults($results);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -80,6 +91,7 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //
