@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Purifier;
+use Session;
 
 class OrderController extends Controller
 {
@@ -15,7 +17,7 @@ class OrderController extends Controller
     public function index(Order $order)
     {
         $orders = $order->sortable(['created_at' => 'desc'])->paginate(10);
-        return view('pages.orders')->withOrders($orders);
+        return view('orders.index')->withOrders($orders);
     }
 
     /**
@@ -25,7 +27,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('orders.create');
     }
 
     /**
@@ -36,7 +38,28 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        Validate data.
+        $this->validate($request, [
+            'first_name' => 'required|string|max:191',
+            'last_name' => 'required|string|max:191',
+            'email' => 'required|string|email',
+            'details' => 'required'
+        ]);
+//        Store in the DB.
+        $order = new Order;
+
+        $order->first_name = $request->first_name;
+        $order->last_name = $request->last_name;
+        $order->email = $request->email;
+        $order->details = Purifier::clean($request->details);
+
+        $order->save();
+
+        Session::flash('success', 'Order was successfully placed!');
+
+//        Redirect.
+        return redirect()->route('orders.show', $order->id);
+
     }
 
     /**
@@ -47,7 +70,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        return view('orders.show')->withOrder($order);
     }
 
     /**

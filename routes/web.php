@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', function () {return view('pages.main');})->name('main');
-Route::resource('orders', 'OrderController');
+Route::get('/', 'PageController@main')->name('main');
+Route::resource('orders', 'OrderController')->except(['edit', 'update', 'destroy']);

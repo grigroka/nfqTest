@@ -1,20 +1,26 @@
-<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-dark">
-    <a class="navbar-brand" href="#">nfqTestApp</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto navbar-right">
-            <li class="{{ Request::is('/') ? "active" : "" }}">
-                <a class="nav-link" href="{{ route('main') }}">Main</a>
-            </li>
-            <li class="{{ Request::is('orders') ? "active" : "" }}">
-                <a class="nav-link" href="{{ route('orders.index') }}">Orders</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
+<nav class="navbar navbar-static-top navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                {{ config('app.name', 'nfqTestApp') }}
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="{{ Request::is('/') ? "active" : "" }}">
+                    <a class="nav" href="{{ route('main') }}">Main</a>
+                </li>
+                <li class="{{ Request::is('orders') ? "active" : "" }}">
+                    <a class="nav-link" href="{{ route('orders.index') }}">Orders</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
