@@ -82,7 +82,7 @@ class OrderController extends Controller
         ]);
         $query = $request->search;
         $results = $order->sortable()->where('first_name', 'LIKE', '%' . $query . '%')->orWhere('last_name', 'LIKE', '%' . $query .'%')->orWhere('email', 'LIKE', '%' . $query .'%')->orWhere('details', 'LIKE', '%' . $query . '%')->paginate(10);
-        return view('orders.search')->withResults($results);
+        return view('orders.search')->withResults($results)->withQuery($query);
     }
 
     /**
