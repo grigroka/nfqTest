@@ -18,7 +18,7 @@
         <h4>No orders match your query.</h4>
     @elseif (count($results) >= 1)
         <h4>Total results: {{$results->count() }}</h4>
-        <div class="container-fluid">
+        <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
                     <th width="80px">@sortablelink('id', 'ID')</th>
