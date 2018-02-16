@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('e4c58a55fa679a'),
+    'username' => env('MAIL_USERNAME', 'e4c58a55fa679a'),
 
-    'password' => env('8b2b26c4c60593'),
+    'password' => env('MAIL_PASSWORD', '8b2b26c4c60593'),
 
     /*
     |--------------------------------------------------------------------------

@@ -26,7 +26,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="{{ Request::is('contact') ? "active" : "" }}">
-                    <a class="nav" href="{{ route('contact') }}">Contact</a>
+                    <a class="nav" href="{{ route('contact') }}">Contact Us</a>
                 </li>
                 <li class="{{ Request::is('about') ? "active" : "" }}">
                     <a class="nav-link" href="{{ route('about') }}">About Us</a>
