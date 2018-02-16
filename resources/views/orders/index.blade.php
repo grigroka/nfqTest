@@ -12,8 +12,8 @@
             <input type="submit" value="Search" class="btn btn-success">
         </form>
     </div>
-    <div class="container-fluid">
-        <table class="table table-bordered table-responsive">
+    <div class="table-responsive">
+        <table class="table table-bordered">
             <tr>
                 <th width="80px">@sortablelink('id', 'ID')</th>
                 <th>@sortablelink('first_name', 'First Name')</th>
