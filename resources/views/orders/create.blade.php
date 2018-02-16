@@ -13,7 +13,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-offset-3 col-md-6">
             <h1>Place a new order</h1>
             <hr>
             <form action="{{ route('orders.store') }}" method="POST">

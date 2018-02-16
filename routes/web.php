@@ -14,3 +14,6 @@
 Route::get('/', 'PageController@main')->name('main');
 Route::resource('orders', 'OrderController')->except(['edit', 'update', 'destroy']);
 Route::get('queries', 'OrderController@search')->name('queries.search');
+Route::get('contact', 'PageController@getContact')->name('contact');
+Route::post('contact', 'PageController@postContact');
+Route::get('about', 'PageController@getAbout')->name('about');
