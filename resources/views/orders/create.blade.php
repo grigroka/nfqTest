@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label for="details">Details:</label>
-                    <textarea id="details" name="details" class="form-control" rows="7"><?=htmlspecialchars(old('details'))?></textarea>
+                    <textarea id="details" name="details" class="form-control" rows="10"><?=htmlspecialchars(old('details'))?></textarea>
                 </div>
                 <input type="submit" value="Place Order" class="btn btn-success btn-block">
             </form>

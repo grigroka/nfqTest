@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" class="form-control"><?=htmlspecialchars(old('message'))?></textarea>
+                    <textarea id="message" name="message" class="form-control" rows="15"><?=htmlspecialchars(old('message'))?></textarea>
                 </div>
 
                 <input type="submit" value="Send Message" class="btn btn-success">
