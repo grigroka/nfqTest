@@ -14,6 +14,5 @@
             <p>{!! $order->details !!}</p>
         </div>
     </div>
-    <hr>
 
 @endsection

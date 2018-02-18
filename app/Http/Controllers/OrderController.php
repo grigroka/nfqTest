@@ -73,7 +73,7 @@ class OrderController extends Controller
         $order = Order::find($id);
         return view('orders.show')->withOrder($order);
     }
-//    Search function.
+//    Search orders.
 
     public function search(Request $request, Order $order)
     {
@@ -81,7 +81,7 @@ class OrderController extends Controller
             'search' => 'required|max:191'
         ]);
         $query = $request->search;
-        $results = $order->sortable()->where('first_name', 'LIKE', '%' . $query . '%')->orWhere('last_name', 'LIKE', '%' . $query .'%')->orWhere('email', 'LIKE', '%' . $query .'%')->orWhere('details', 'LIKE', '%' . $query . '%')->paginate(10);
+        $results = $order->sortable()->where('first_name', 'LIKE', '%' . $query . '%')->orWhere('last_name', 'LIKE', '%' . $query .'%')->orWhere('email', 'LIKE', '%' . $query .'%')->orWhere('details', 'LIKE', '%' . $query . '%')->orWhere('id', 'LIKE', $query)->paginate(10);
         return view('orders.search')->withResults($results)->withQuery($query);
     }
 

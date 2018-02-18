@@ -12,7 +12,7 @@ class PageController extends Controller
 {
     public function main()
     {
-        $orders = Order::orderBy('created_at', 'desc')->paginate(3);
+        $orders = Order::orderBy('created_at', 'desc')->limit(3)->get();
 
         return view('pages.main')->withOrders($orders);
     }
